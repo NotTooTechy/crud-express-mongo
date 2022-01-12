@@ -25,6 +25,15 @@ function changeText(id) {
 	    form.setAttribute("method", "post");
 	    form.setAttribute("id", "update_form_id");
 	    form.setAttribute("action", "/update_quotes");
+    	    // input name box
+	    var nm = document.createElement("INPUT");
+	    //nm.setAttribute("id", "updating_name");
+	    nm.setAttribute("name", "updating_name");
+	    nm.setAttribute("readonly", true);
+	    var quotename = document.getElementById(name);
+	    nm.setAttribute("value", name);
+  	    console.log(name);
+	    form.appendChild(nm);
     	    // input edit box
 	    var para = document.createElement("INPUT");
 	    para.setAttribute("id", "update_quote_text");
@@ -32,21 +41,13 @@ function changeText(id) {
 	    para.setAttribute("value", id.innerHTML);
   	    console.log(id.id);
 	    form.appendChild(para);
-    	    // input name box
-	    var nm = document.createElement("INPUT");
-	    //nm.setAttribute("id", "updating_name");
-	    nm.setAttribute("name", "updating_name");
-	    var quotename = document.getElementById(name);
-	    nm.setAttribute("value", name);
-  	    console.log(name);
-	    form.appendChild(nm);
 	    // submit button
 	    var submit = document.createElement("INPUT");
+	    submit.setAttribute("value", "Update Quote");
 	    submit.setAttribute("type", "submit");
 	    form.appendChild(submit);
 	    
 	    span_quote.append(form);
-	    //document.getElementById(id.id).appendChild(para);
   }
 }
 function deleteit(obj) {
@@ -67,6 +68,7 @@ function deleteit(obj) {
 	    form.appendChild(nm);
 
 	    var submit = document.createElement("INPUT");
+	    submit.setAttribute("value", "Delete Quote");
 	    submit.setAttribute("type", "submit");
 	    form.appendChild(submit);
 
